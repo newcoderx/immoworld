@@ -6,17 +6,22 @@ import { SearchComponent } from "./views/search/search.component";
 
 const routes: Routes = [
     {
-        path: '/offer',
+        path: '',
+        component: WelcomesiteComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'offer',
         component: OfferComponent
     },
     {
-        path: '/search',
+        path: 'search',
         component: SearchComponent
     }
 ];
 
 @NgModule( {
-    imports: [RouterModule.forChild( routes )],
+    imports: [RouterModule.forRoot( routes )],
     exports: [RouterModule]
 } )
 export class AppRoutingModule {

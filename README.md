@@ -1,6 +1,8 @@
 #Next steps
-[ ] routelink in buttons integrieren
 [ ] bieteformular erstellen
+
+[x] routelink in buttons integrieren
+
 
 
 # Immoworld

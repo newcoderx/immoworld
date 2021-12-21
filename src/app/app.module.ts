@@ -8,6 +8,7 @@ import { ButtonComponent } from './shared/button/button.component';
 import {MatButtonModule} from '@angular/material/button';
 import { OfferComponent } from './views/offer/offer.component';
 import { SearchComponent } from './views/search/search.component';
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { SearchComponent } from './views/search/search.component';
     OfferComponent,
     SearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    NoopAnimationsModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        NoopAnimationsModule,
+        MatButtonModule,
+        AppRoutingModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
