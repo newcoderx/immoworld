@@ -1,0 +1,33 @@
+<form (ngSubmit)="register(form.value)" #form="ngForm">
+<fieldset ngModelGroup="fullname">
+    <label>Vorname:</label>
+    <input type="text" name="firstname" [(ngModel)]="user.firstname">
+    <label>Nachname:</label>
+    <input type="text" name="lastname" [(ngModel)]="user.lastname">
+</fieldset>
+
+<br><br>
+<label>Passwort:</label>
+<input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="3">
+<br>
+<button type="submit" [disabled]="!form.valid">Registrieren</button>
+</form>
+
+<p *ngIf="password.invalid">
+    Passwort nicht valide.
+</p>
+
+<!--<form #form="ngForm" (ngSubmit)="register(form.value)">-->
+<!--<fieldset ngModelGroup="fullname">-->
+<!--    <label>Vorname:</label>-->
+<!--    <input type="text" name="firstname" [(ngModel)]="firstname">-->
+<!--    <label>Nachname:</label>-->
+<!--    <input type="text" name="lastname" [(ngModel)]="lastname">-->
+<!--</fieldset>-->
+
+<!--<br><br>-->
+<!--<label>Passwort:</label>-->
+<!--<input type="password" name="password" [(ngModel)]="password">-->
+<!--<br>-->
+<!--<button type="submit">Registrieren</button>-->
+<!--</form>-->

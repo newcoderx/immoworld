@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomesiteComponent } from "./views/welcomesite/welcomesite.component";
 import { OfferComponent } from "./views/offer/offer.component";
 import { SearchComponent } from "./views/search/search.component";
+import { LoginComponent } from "./views/login/login.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: WelcomesiteComponent,
+        component: LoginComponent,
         pathMatch: 'full'
     },
     {
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
         path: 'search',
         component: SearchComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
 

@@ -1,1 +1,50 @@
-<p>offer works!</p>
+<p>offer Form</p>
+<br><br>
+<form #offerForm="ngForm" (ngSubmit)="submitOfferform(offerForm.value)">
+    <label>Sell-Rent:</label>
+    <input name="sellrent" [(ngModel)]="offer.sellrent" required minlength="3">
+    <div *ngIf="errors.sellrent" class="ui negative message">
+        {{errors.sellrent}}
+    </div>
+    <br><br>
+    <label>Art:</label>
+    <input name="type" [(ngModel)]="offer.type">
+    <br><br>
+    <label>Größe Zimmer:</label>
+    <input name="rooms" [(ngModel)]="offer.rooms"required minlength="3">
+     <div *ngIf="errors.rooms" class="ui negative message">
+         {{errors.rooms}}
+     </div>
+    <br><br>
+    <label>Größe Quadratmeter Wohnfläche:</label>
+    <input name="sizeLiving" [(ngModel)]="offer.sizeLiving">
+    <br><br>
+    <label>Größe Quadratmeter Grundstück:</label>
+    <input name="sizeOutside" [(ngModel)]="offer.sizeOutside">
+    <br><br>
+    <label>Preis:</label>
+    <input name="price" [(ngModel)]="offer.price">
+    <br><br>
+    <label>Bezug ab:</label>
+    <input type="date" name="freeAt" [(ngModel)]="offer.freeAt" useValueAsDate>
+    <br><br>
+    <fieldset ngModelGroup="adres">
+        <label>Strasse:</label>
+        <input name="street" [(ngModel)]="offer.street">
+        <label>PLZ:</label>
+        <input name="plz" [(ngModel)]="offer.plz">
+        <label>Ort:</label>
+        <input name="city" [(ngModel)]="offer.city">
+    </fieldset>
+    <br><br>
+    <fieldset ngModelGroup="pictures">
+        <label>BildTitel:</label>
+        <input name="pictureTitle" [(ngModel)]="offer.picture[0].title">
+        <label>Datei:</label>
+        <input name="file" [(ngModel)]="offer.picture[0].file">
+    </fieldset>
+
+    <button type="submit" [disabled]="!offerForm.valid">Abschicken</button>
+</form>
+
+<div *ngIf="offerForm.invalid">Felder nicht valide</div>

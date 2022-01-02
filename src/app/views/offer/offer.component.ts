@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ErrorMessagesComponent } from "../../shared/error-messages/error-messages.component";
+
 
 @Component({
   selector: 'app-offer',
@@ -6,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class OfferComponent implements OnInit {
+export class OfferComponent {
+  @ViewChild('offerForm') offerForm: NgForm;
+  errors: {[key: string]: string} = {};
 
-  constructor() { }
+  offer: any = {};
 
-  ngOnInit(): void {
+
+  submitOfferform(value: any) {
+    console.log(value);
   }
 
 }

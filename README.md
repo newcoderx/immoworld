@@ -1,7 +1,23 @@
 #Next steps
+next: Validierung 12.2.3
 [ ] bieteformular erstellen
+◾Es soll ein Formular zum Hinzufügen einer Immobilie zum Datenbestand existieren.
+◾Das Hinzufügen einer Immobilie soll nur mit gültigen Eingaben möglich sein.
+◾Eingabefelder dürfen nicht leer sein
+◾Das Verfügedatum muss dem Muster dd.MM.YYYY entsprechen. (direkt validieren)
 
-[x] routelink in buttons integrieren
+Was biete ich:
+Art: Vermieten, Verkaufen
+Immobilientyp: Haus, Wohnung
+Größe Zimmer
+Größe Quadratmeter Wohnfläche
+Größe Quadratmeter Grundstück
+Adresse
+Preis
+Bilder
+
+
+[ ] offer Datenmodell erstellen
 
 
 
