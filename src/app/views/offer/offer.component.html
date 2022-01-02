@@ -39,12 +39,15 @@
     <br><br>
     <fieldset ngModelGroup="pictures">
         <label>BildTitel:</label>
-        <input name="pictureTitle" [(ngModel)]="offer.picture[0].title">
+        <input name="pictureTitle" [(ngModel)]="offer.pictureTitle">
+<!--        <input name="pictureTitle" [(ngModel)]="offer.picture[0].title">-->
         <label>Datei:</label>
-        <input name="file" [(ngModel)]="offer.picture[0].file">
+        <input name="file" [(ngModel)]="offer.file">
+<!--//TODO: warum funktioniert es so nicht -->
+<!--        <input name="file" [(ngModel)]="offer.picture[0].file">-->
     </fieldset>
 
-    <button type="submit" [disabled]="!offerForm.valid">Abschicken</button>
+    <button type="submit">Abschicken</button>
 </form>
 
 <div *ngIf="offerForm.invalid">Felder nicht valide</div>

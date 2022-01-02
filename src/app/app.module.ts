@@ -12,7 +12,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule } from "@angular/forms";
 import { DateValueAccessorModule } from "angular-date-value-accessor";
-import { ErrorMessagesComponent } from './shared/error-messages/error-messages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { ErrorMessagesComponent } from './shared/error-messages/error-messages.c
     OfferComponent,
     SearchComponent,
     LoginComponent,
-    ErrorMessagesComponent,
   ],
     imports: [
         BrowserModule,
