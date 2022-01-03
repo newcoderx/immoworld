@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Errors } from "./error-messages";
+import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { Errors } from './error-messages';
 
 
 
@@ -9,34 +9,53 @@ import { Errors } from "./error-messages";
   selector: 'app-offer',
   templateUrl: './offer.component.html'
 })
-export class OfferComponent implements OnInit {
-  @ViewChild('offerForm') offerForm: NgForm;
-  errors: {[key: string]: string} = {};
+export class OfferComponent {
+  errors: { [key: string]: string } = {};
 
-  offer: any = {};
+  offerForm = new FormGroup({
+    sellrent: new FormControl(),
+    type: new FormControl(),
+    rooms: new FormControl(),
+    sizeLiving: new FormControl(),
+    sizeOutside: new FormControl(),
+    price: new FormControl(),
+    freeAt: new FormControl(),
+    adres: new FormGroup({
+      street: new FormControl(),
+      plz: new FormControl(),
+      city: new FormControl()
+    }),
+    pictures: new FormGroup({
+      pictureTitle: new FormControl(),
+      file: new FormControl()
+    }),
+    email: new FormArray([
+      new FormControl(),
+      new FormControl(),
+      new FormControl()
+    ]),
+  })
 
-  ngOnInit() {
-    this.offerForm.statusChanges?.subscribe(() => this.updateErrorMessages )
-  }
 
-  updateErrorMessages(){
-    this.errors = {};
-    for ( const message of Errors ) {
-      const control = this.offerForm.form.get(message.forControl);
-      if(
-          control &&
-          control.dirty &&
-          control.invalid &&
-          control.errors[message.forValidator] &&
-          !this.errors[message.forControl]) {
-        this.errors[message.forControl] = message.text;
-      }
+  // updateErrorMessages(){
+  //   this.errors = {};
+  //   for ( const message of Errors ) {
+  //     const control = this.offerForm.form.get(message.forControl);
+  //     if(
+  //         control &&
+  //         control.dirty &&
+  //         control.invalid &&
+  //         control.errors && control.errors[message.forValidator] &&
+  //         !this.errors[message.forControl]) {
+  //       this.errors[message.forControl] = message.text;
+  //     }
+  //
+  //   }
+  //   console.log(this.errors);
+  // }
 
-    }
-  }
-
-  submitOfferform(value: any) {
-    console.log(value);
+  submitOfferform() {
+    console.log(this.offerForm);
   }
 
 }

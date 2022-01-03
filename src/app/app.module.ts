@@ -10,8 +10,8 @@ import { OfferComponent } from './views/offer/offer.component';
 import { SearchComponent } from './views/search/search.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { LoginComponent } from './views/login/login.component';
-import { FormsModule } from "@angular/forms";
 import { DateValueAccessorModule } from "angular-date-value-accessor";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { DateValueAccessorModule } from "angular-date-value-accessor";
         NoopAnimationsModule,
         MatButtonModule,
         AppRoutingModule,
-        FormsModule,
+        ReactiveFormsModule,
         DateValueAccessorModule
     ],
   providers: [],
