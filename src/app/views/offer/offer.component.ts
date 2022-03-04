@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { Errors } from './error-messages';
 
 
@@ -9,11 +9,12 @@ import { Errors } from './error-messages';
   selector: 'app-offer',
   templateUrl: './offer.component.html'
 })
-export class OfferComponent {
+export class OfferComponent implements OnInit {
   errors: { [key: string]: string } = {};
+ 
 
   offerForm = new FormGroup({
-    sellrent: new FormControl(),
+    sellrent: new FormControl(null, [Validators.required, Validators.minLength(3)]),
     type: new FormControl(),
     rooms: new FormControl(),
     sizeLiving: new FormControl(),
@@ -30,11 +31,19 @@ export class OfferComponent {
       file: new FormControl()
     }),
     email: new FormArray([
-      new FormControl(),
+      new FormControl('tesst@web.de', Validators.email),
       new FormControl(),
       new FormControl()
     ]),
   })
+
+  ngOnInit() {
+    this.offerForm.controls['price'].setValidators(Validators.required);
+  }
+  
+  reset(){
+    this.offerForm.reset();
+  }
 
 
   // updateErrorMessages(){
@@ -54,7 +63,8 @@ export class OfferComponent {
   //   console.log(this.errors);
   // }
 
-  submitOfferform() {
+  submitOfferform(value: any) {
+    console.log(value);
     console.log(this.offerForm);
   }
 

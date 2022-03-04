@@ -4,11 +4,12 @@ import { WelcomesiteComponent } from "./views/welcomesite/welcomesite.component"
 import { OfferComponent } from "./views/offer/offer.component";
 import { SearchComponent } from "./views/search/search.component";
 import { LoginComponent } from "./views/login/login.component";
+import { RealestatesComponent } from './views/realestates/realestates.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent,
+        component: RealestatesComponent,
         pathMatch: 'full'
     },
     {

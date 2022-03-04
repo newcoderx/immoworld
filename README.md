@@ -1,5 +1,10 @@
 #Next steps
-next: Validierung 12.2.3
+
+[ ] Angular Materials benutzen: https://medium.com/@vivek0208/create-form-using-angular-material-f2472dab1687 : step 3
+
+[ ] Anzeigeseite der Immobilien erstellen
+    - Array mit Objekten (real estate)
+
 [ ] bieteformular erstellen
 ◾Es soll ein Formular zum Hinzufügen einer Immobilie zum Datenbestand existieren.
 ◾Das Hinzufügen einer Immobilie soll nur mit gültigen Eingaben möglich sein.

@@ -1,6 +1,6 @@
 <p>offer Form</p>
 <br><br>
-<form [formGroup]="offerForm" (ngSubmit)="submitOfferform()">
+<form [formGroup]="offerForm" (ngSubmit)="submitOfferform(offerForm.value)">
     <label>Sell-Rent:</label>
     <input formControlName="sellrent" required minlength="3">
     <div *ngIf="errors.sellrent" class="ui negative message">
@@ -15,7 +15,6 @@
      <div *ngIf="errors.rooms" class="ui negative message">
          {{errors.rooms}}
      </div>
-    <br><br>
     <label>Größe Quadratmeter Wohnfläche:</label>
     <input formControlName="sizeLiving" >
     <br><br>
@@ -55,6 +54,7 @@
     </fieldset>
 
     <button type="submit">Abschicken</button>
+    <button (reset)="reset()">reset</button>
 </form>
 
 <div *ngIf="offerForm.invalid">Felder nicht valide</div>
